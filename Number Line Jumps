@@ -1,0 +1,26 @@
+#Best approach
+
+def kangaroo(x1, v1, x2, v2):
+    # Write your code here
+    if v1==v2:
+        if x1==x2:
+            return 'YES'
+        else:
+            return 'NO'
+    else:
+        if (x2-x1)%(v1-v2)==0 and (x2-x1)/(v1-v2)>=0:
+            return 'YES'
+        else:
+            return 'NO'
+
+#another approach
+
+def kangaroo(x1, v1, x2, v2):
+    # Write your code here
+    for i in range(10001):
+        x1=x1+v1
+        x2=x2+v2
+        if x1==x2:
+            return 'YES'
+    else:
+        return 'NO'
